@@ -14,9 +14,9 @@ const map: any = {
 
 /** User packages configuration. */
 const packages: any = {
-  'ng2-alfresco-core': { defaultExtension: 'js' },
+  'ng2-alfresco-core': { main: 'index' },
   'ng2-alfresco-search': { main: 'index' },
-  'ng2-alfresco-upload': { main: 'dist/index' }
+  'ng2-alfresco-upload': { main: 'index' }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
