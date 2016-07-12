@@ -7,10 +7,16 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  'ng2-alfresco-core': 'vendor/ng2-alfresco-core',
+  'ng2-alfresco-search': 'vendor/ng2-alfresco-search',
+  'ng2-alfresco-upload': 'vendor/ng2-alfresco-upload'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  'ng2-alfresco-core': { defaultExtension: 'js' },
+  'ng2-alfresco-search': { main: 'index' },
+  'ng2-alfresco-upload': { main: 'dist/index' }
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,20 +42,11 @@ const barrels: string[] = [
   /** @cli-barrel */
 ];
 
-const thirdParty: string[] = [
-  'ng2-alfresco-core',
-  'ng2-alfresco-search',
-  'ng2-alfresco-upload',
-];
-
 const cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
 });
 
-thirdParty.forEach((thirdPartyName: string) => {
-  cliSystemConfigPackages[thirdPartyName] = { main: 'dist/index' };
-});
 /** Type declaration for ambient System. */
 declare var System: any;
 
@@ -58,7 +55,8 @@ System.config({
   map: {
     '@angular': 'vendor/@angular',
     'rxjs': 'vendor/rxjs',
-    'main': 'main.js'
+    'main': 'main.js',
+
   },
   packages: cliSystemConfigPackages
 });
